@@ -19,11 +19,18 @@ export default props => (
         </Stack.Screen>
         <Stack.Screen name="SecondView">
             {props => (
-                <PassoStack {...props} avancar="ThirdView">
+                <PassoStack {...props} voltar avancar="ThirdView"
+                    avancarParams={{ numero: 1007 }}>
                     <SecondView />
                 </PassoStack>
             )}
         </Stack.Screen>
-        <Stack.Screen name="ThirdView" component={ThirdView} />
-    </Stack.Navigator>
+        <Stack.Screen name="ThirdView">
+            {props => (
+                <PassoStack {...props} voltar avancar="ThirdView">
+                    <ThirdView {...props} />
+                </PassoStack>
+            )}
+        </Stack.Screen>
+    </Stack.Navigator >
 )
