@@ -10,8 +10,20 @@ export default props => (
     <Stack.Navigator initialRouteName="FirstView"
         screenOptions={{ headerShown: true }}>
         <Stack.Screen name="FirstView" component={FirstView}
-            options={{ title: 'Informações Iniciais' }} />
-        <Stack.Screen name="SecondView" component={SecondView} />
+            options={{ title: 'Informações Iniciais' }} >
+            {props => (
+                <PassoStack {...props} avancar="SecondView">
+                    <FirstView />
+                </PassoStack>
+            )}
+        </Stack.Screen>
+        <Stack.Screen name="SecondView">
+            {props => (
+                <PassoStack {...props} avancar="ThirdView">
+                    <SecondView />
+                </PassoStack>
+            )}
+        </Stack.Screen>
         <Stack.Screen name="ThirdView" component={ThirdView} />
     </Stack.Navigator>
 )
