@@ -9,7 +9,7 @@ const Stack = createStackNavigator()
 export default props => (
     <Stack.Navigator initialRouteName="FirstView"
         screenOptions={{ headerShown: true }}>
-        <Stack.Screen name="FirstView" component={FirstView}
+        <Stack.Screen name="FirstView"
             options={{ title: 'Informações Iniciais' }} >
             {props => (
                 <PassoStack {...props} avancar="SecondView">
