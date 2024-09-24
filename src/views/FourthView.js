@@ -1,13 +1,29 @@
 import React from 'react'
 import TextoCentral from '../components/TextoCentral'
+import { View, Button } from 'react-native'
 
 export default props => {
-    const r = props.route
-    const numero = r && r.params && r.params.numero 
-        ? props.route.params.numero : 0
     return (
-        <TextoCentral corFundo='#9932cd'>
-            Tela C - {numero}
-        </TextoCentral>
+        <View style={{ flex: 1 }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+                <Button
+                    title='Abrir'
+                    onPress={() => {
+                        props.navigation.openDrawer()
+                        setTimeout(() => {
+                            props.navigation.closeDrawer()
+                            setInterval(() => {
+                                props.navigation.toggleDrawer()
+                            }, 1000)
+                        }, 3000)
+                    }}
+                />
+            </View>
+            <View style={{ flex: 1 }}>
+                <TextoCentral corFundo='#33fa72' corTexto='#000'>
+                    Tela D
+                </TextoCentral>
+            </View>
+        </View>
     )
 }

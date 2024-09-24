@@ -8,10 +8,10 @@ import FourthView from '../views/FourthView'
 const Drawer = createDrawerNavigator()
 
 export default props => (
-    <Drawer.Navigator initialRouteName="TelaD">
-        <Drawer.Screen name="TelaA" component={FirstView} />
-        <Drawer.Screen name="TelaB" component={SecondView} />
-        <Drawer.Screen name="TelaC" component={ThirdView} />
-        <Drawer.Screen name="TelaD" component={FourthView} />
+    <Drawer.Navigator initialRouteName="FourthView">
+        <Drawer.Screen name="FirstView" component={FirstView} />
+        <Drawer.Screen name="SecondView" component={SecondView} />
+        <Drawer.Screen name="ThirdView" component={ThirdView} />
+        <Drawer.Screen name="FourthView" component={FourthView} />
     </Drawer.Navigator>
 )

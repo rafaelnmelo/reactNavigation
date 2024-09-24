@@ -30,14 +30,13 @@ export default props => (
                         break
                 }
 
-                return <Ionicons name={iconName} size={size} color={color} />;
-            },
+                return <Ionicons name={iconName} size={size} color={color} />
+            }
         })}
         tabBarOptions={{
             activeTintColor: 'red',
             inactiveTintColor: 'blue',
-            showLabel: true,
-            // labelStyle: { fontSize: 30 }
+            showLabel: true
         }} initialRouteName="SecondView">
         <Tab.Screen name="FirstView" component={FirstView}
             options={{ title: 'Inicial' }} />
