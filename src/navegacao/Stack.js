@@ -12,14 +12,17 @@ export default props => (
         <Stack.Screen name="FirstView"
             options={{ title: 'Informações Iniciais' }} >
             {props => (
-                <PassoStack {...props} avancar="SecondView">
+                <PassoStack {...props}
+                    avancar="SecondView">
                     <FirstView />
                 </PassoStack>
             )}
         </Stack.Screen>
         <Stack.Screen name="SecondView">
             {props => (
-                <PassoStack {...props} voltar avancar="ThirdView"
+                <PassoStack {...props}
+                    voltar
+                    avancar="ThirdView"
                     avancarParams={{ numero: 1007 }}>
                     <SecondView />
                 </PassoStack>
@@ -27,7 +30,9 @@ export default props => (
         </Stack.Screen>
         <Stack.Screen name="ThirdView">
             {props => (
-                <PassoStack {...props} voltar avancar="ThirdView">
+                <PassoStack {...props}
+                    voltar
+                    avancar="ThirdView">
                     <ThirdView {...props} />
                 </PassoStack>
             )}
